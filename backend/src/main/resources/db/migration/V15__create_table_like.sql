@@ -1,6 +1,0 @@
-CREATE TABLE "like"(
-    author_id INTEGER NOT NULL,
-    user_id INTEGER NOT NULL,
-    CONSTRAINT fk_author FOREIGN KEY (author_id) REFERENCES author ON DELETE CASCADE,
-    CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES "user" ON DELETE CASCADE
-);

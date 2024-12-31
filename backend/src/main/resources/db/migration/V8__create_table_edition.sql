@@ -1,9 +1,0 @@
-CREATE TABLE edition(
-    edition_id SERIAL PRIMARY KEY,
-    edition_number INTEGER NOT NULL,
-    edition_image TEXT,
-    publisher_id INTEGER NOT NULL,
-    book_id INTEGER NOT NULL,
-    CONSTRAINT fk_publisher FOREIGN KEY (publisher_id) REFERENCES publisher ON DELETE RESTRICT,
-    CONSTRAINT fk_book FOREIGN KEY (book_id) REFERENCES book ON DELETE RESTRICT
-);

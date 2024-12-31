@@ -1,4 +1,4 @@
-CREATE TABLE "user"(
+CREATE TABLE users(
     user_id SERIAL PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
     email TEXT NOT NULL UNIQUE,

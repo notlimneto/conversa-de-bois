@@ -1,6 +1,0 @@
-CREATE TABLE author_book(
-    author_id INTEGER NOT NULL,
-    book_id INTEGER NOT NULL,
-    CONSTRAINT fk_author FOREIGN KEY (author_id) REFERENCES author ON DELETE CASCADE,
-    CONSTRAINT fk_book FOREIGN KEY (book_id) REFERENCES book ON DELETE CASCADE
-);
