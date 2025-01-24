@@ -57,7 +57,7 @@ public class AuthController {
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("/register/admin")
+    @PostMapping("/register-admin")
     public ResponseEntity registerAdmin(@RequestBody @Valid RegisterDTO data) {
         if(userRepository.findByUsername(data.username()) != null) return ResponseEntity.badRequest().build();
         if(userRepository.findByEmail(data.email()) != null) return ResponseEntity.badRequest().build();
