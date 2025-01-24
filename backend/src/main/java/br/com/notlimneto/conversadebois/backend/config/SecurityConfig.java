@@ -31,6 +31,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
                         .requestMatchers(HttpMethod.GET, "/author/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/book/**").permitAll()
 
                         // Authenticated routes
 
@@ -39,7 +40,8 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/author/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/author/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.POST, "/book/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.POST, "/book/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/book/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/book/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)

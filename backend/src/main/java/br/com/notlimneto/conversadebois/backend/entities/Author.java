@@ -1,8 +1,6 @@
 package br.com.notlimneto.conversadebois.backend.entities;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -36,7 +34,7 @@ public class Author {
     @JoinColumn(name = "state_id", nullable = false)
     private State state;
 
-    @JsonManagedReference
+    @JsonBackReference
     @ManyToMany
     @JoinTable(name = "book_author",
             joinColumns = @JoinColumn(name = "author_id"),

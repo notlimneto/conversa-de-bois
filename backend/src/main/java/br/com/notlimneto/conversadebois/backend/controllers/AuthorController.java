@@ -35,7 +35,10 @@ public class AuthorController {
         Country country = countryRepository.findByCode(data.country());
         if (country == null) return ResponseEntity.badRequest().build();
 
-        State state = stateRepository.findById(data.state());
+        if (data.name() == null || data.name().isEmpty()) return ResponseEntity.badRequest().build();
+        if (data.birthYear() == null) return ResponseEntity.badRequest().build();
+
+        State state = this.stateRepository.findById(data.state());
 
         Author author = new Author();
 
@@ -54,7 +57,10 @@ public class AuthorController {
         Country country = countryRepository.findByCode(data.country());
         if (country == null) return ResponseEntity.badRequest().build();
 
-        State state = stateRepository.findById(data.state());
+        if (data.name() == null || data.name().isEmpty()) return ResponseEntity.badRequest().build();
+        if (data.birthYear() == null) return ResponseEntity.badRequest().build();
+
+        State state = this.stateRepository.findById(data.state());
 
         Author author = this.authorRepository.findById(data.id());
         if (author == null) return ResponseEntity.badRequest().build();
