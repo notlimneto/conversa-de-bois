@@ -1,30 +1,41 @@
 package br.com.notlimneto.conversadebois.backend.enumeration;
 
+import lombok.Getter;
+
+@Getter
 public enum StyleEnum {
-    POESIA("Poesia"),
-    ROMANCE("Romance"),
-    NOVELA("Novela"),
-    CONTO("Conto"),
-    CRONICA("Crônica"),
-    DRAMA("Drama"),
-    ENSAIO("Ensaio"),
-    EPOPEIA("Epopeia"),
-    FABULA("Fábula"),
-    PARABOLA("Parábola"),
     AUTOBIOGRAFIA("Autobiografia"),
     BIOGRAFIA("Biografia"),
-    MEMORIAS("Memórias"),
-    EPISTOLOGRAFIA("Carta/Epistolografia"),
-    DIARIO("Diário"),
-    TRAGEDIA("Tragédia"),
     COMEDIA("Comédia"),
-    LITERATURA_FANTASTICA("Literatura Fantástica"),
+    CONTO("Conto"),
+    CONTOS("Contos"),
+    CRONICA("Crônica"),
+    DIARIO("Diário"),
+    DRAMA("Drama"),
+    ENSAIO("Ensaio"),
+    EPISTOLOGRAFIA("Carta/Epistolografia"),
+    EPOPEIA("Epopeia"),
+    FABULA("Fábula"),
     LITERATURA_DE_CORDEL("Literatura de Cordel"),
-    MANIFESTO("Manifesto");
+    LITERATURA_FANTASTICA("Literatura Fantástica"),
+    MANIFESTO("Manifesto"),
+    MEMORIAS("Memórias"),
+    NOVELA("Novela"),
+    PARABOLA("Parábola"),
+    POESIA("Poesia"),
+    ROMANCE("Romance"),
+    TRAGEDIA("Tragédia");
 
-    private String style;
+    private final String style;
 
     StyleEnum(String style) {
         this.style = style;
+    }
+
+    public static boolean hasStyle(String style) {
+        for (StyleEnum styleEnum : StyleEnum.values()) {
+            if (styleEnum.getStyle().equals(style)) return true;
+        }
+        return false;
     }
 }

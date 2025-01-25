@@ -26,6 +26,7 @@ public class Book {
     private String title;
     private String description;
     private Integer year;
+    private String style;
 
     @JsonManagedReference
     @ManyToMany
